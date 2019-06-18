@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container px-md-5 px-lg-5 px-xl-5">
+    <div class="pricing-header px-3 py-3 pt-md-4 pb-md-4 mx-auto text-center">
+        <h3 class="display-5">Twitter Analysis</h3>
+    </div>
+    <form class="px-md-5 px-lg-5 px-xl-5 mx-md-5 mx-lg-5 mx-xl-5">
+        <div class="form-group px-md-5 px-lg-5 px-xl-5">
+            <label for="inputTweetTarget">Choose to analyse tweets of a user or a certain topic</label>
+            <select class="form-control" name="tweetTarget" id="inputTweetTarget">
+                <option selected value="user">User</option>
+                <option value="topic">Topic</option>
+            </select>
+        </div>
+        <div class="form-group px-md-5 px-lg-5 px-xl-5" id="tweetUser">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
+                <input type="text" autocomplete="off" class="form-control" name="user" aria-describedby="userValidate" placeholder="Enter user">
+            </div>
+            <small id="userValidate" class="form-text text-danger"></small>
+        </div>
+        <div class="form-group px-md-5 px-lg-5 px-xl-5" id="tweetTopic" style="display:none">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">#</div>
+                </div>
+                <input type="text" autocomplete="off" class="form-control" name="topic" aria-describedby="topicValidate" placeholder="Enter topic">
+            </div>
+            <small id="topicValidate" class="form-text text-danger"></small>
+        </div>
+        <div class="form-group px-md-5 px-lg-5 px-xl-5">
+            <input type="number" min=1 id="numTweets" class="form-control" name="count" placeholder="Number of tweets">
+        </div>
+        <div class="btn-group pb-3 px-md-5 px-lg-5 px-xl-5">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div> 
+
+<script src="../static/twitter.js"></script>
+{% endblock %}
+
+{% block graph %}
+<div class="container-fluid py-sm-5 py-md-5 p-lg-5 p-xl-5">
+    <canvas id="myChart" class="px-md-5 px-lg-5 px-xl-5"></canvas>
+</div> 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="../static/drawGraph.js"></script>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="pricing-header px-3 py-3 pt-md-4 pb-md-4 mx-auto text-center">
+        <h3 class="display-5">What is Sentiment Analysis?</h3>
+        <p class="lead">Sentiment Analysis refers to the usage of natural language processing and text analysis to 
+            identify and categorize any given piece of text on how positive or negative the given text is.
+        </p>
+        <h3 class="display-5">How is text analyzed here?</h3>
+        <p class="lead">Here text is analyzed using python's <a href="https://textblob.readthedocs.io/en/dev/">TextBlob</a> 
+            package. TextBlob gives a polarity score between [-1.0, 1.0] where -1.0 is very negative and 1.0 is very positive. 
+            It also gives a subjectivity score of [-0.5, 0.5] where -0.5 is very objective and 0.5 is very subjective.
+        </p>
+    </div>
+                
+    <div class="container-fluid px-4">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Reddit</h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <p>Analyze the comments in any subreddit</p>
+                    <a class="btn btn-lg btn-block btn-primary mt-auto"" href="/reddit" role="button">Go Here</a>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Twitter</h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <p>Analyze the tweets of any user or tweets about any topic</p>
+                    <a class="btn btn-lg btn-block btn-primary mt-auto"" href="/twitter" role="button">Go Here</a>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Custom Text</h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <p>Analyze any custom text</p>
+                    <a class="btn btn-lg btn-block btn-primary mt-auto"" href="/custom" role="button">Go Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block graph %}
+{% endblock %}
